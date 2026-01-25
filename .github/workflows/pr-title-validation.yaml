@@ -1,4 +1,4 @@
-name: 'Lint PR'
+name: 'PR title validation'
 
 on:
   pull_request_target:
@@ -6,12 +6,13 @@ on:
       - opened
       - reopened
       - edited
-      # - synchronize (if you use required Actions)
+      - synchronize
+      - main
 
 jobs:
   main:
     name: Validate PR title
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: read
     steps:
