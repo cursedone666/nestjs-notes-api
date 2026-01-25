@@ -3,7 +3,6 @@ name: Static analysis
 on:
   pull_request:
     types:
-      - main
       - opened
       - reopened
       - edited
