@@ -2,10 +2,7 @@ name: Linting and Formatting
 
 on:
   pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
+    - main
 
 jobs:
   static:
