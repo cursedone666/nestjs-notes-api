@@ -6,8 +6,6 @@ on:
       - opened
       - reopened
       - edited
-      - synchronize
-      - main
 
 jobs:
   main:
