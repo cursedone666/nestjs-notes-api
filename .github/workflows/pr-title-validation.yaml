@@ -6,8 +6,7 @@ on:
       - opened
       - reopened
       - edited
-  pull_request:
-    - main
+      - synchronize
 
 jobs:
   main:
@@ -15,10 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
+      statuses: write
     steps:
       - uses: amannn/action-semantic-pull-request@48f256284bd46cdaab1048c3721360e808335d50
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           types: |
             fix
