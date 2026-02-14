@@ -1,22 +1,25 @@
-name: 'PR title validation'
+name: 'Validate PR title'
 
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - reopened
       - edited
+      - synchronize
+
+permissions:
+  pull-requests: read
+  statuses: write
 
 jobs:
   main:
     name: Validate PR title
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: read
     steps:
       - uses: amannn/action-semantic-pull-request@48f256284bd46cdaab1048c3721360e808335d50
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           types: |
             fix

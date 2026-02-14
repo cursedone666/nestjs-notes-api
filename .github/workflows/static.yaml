@@ -1,4 +1,4 @@
-name: Static analysis
+name: Lint and Formatting
 
 on:
   pull_request:
@@ -6,11 +6,17 @@ on:
       - opened
       - reopened
       - edited
+      - synchronize
+    branches:
+      - main
 
 jobs:
   static:
     name: Lint and Formatting
     runs-on: ubuntu-latest
+    permissions:
+      statuses: write
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
