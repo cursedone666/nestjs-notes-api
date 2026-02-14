@@ -4,17 +4,17 @@ on:
   push:
     branches:
       - main
-    pull_request:
-      branches:
-        - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build-and-test:
+  build-job:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       statuses: write
-      pull_request: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
