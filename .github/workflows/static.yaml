@@ -1,4 +1,4 @@
-name: Static analysis
+name: Lint and Formatting
 
 on:
   pull_request:
