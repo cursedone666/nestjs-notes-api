@@ -6,6 +6,8 @@ on:
       - opened
       - reopened
       - edited
+  pull_request:
+    - main
 
 jobs:
   main:
